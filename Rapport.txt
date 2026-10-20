@@ -1,0 +1,41 @@
+# Rapport de Projet — Gestion de Médiathèque Django
+
+élève: Vladimir Pelissier
+Formation : Centre Européen de Formation — Développeur Web
+
+---
+
+1. Démarche et méthodologie
+Dans le cadre de ce projet, j'ai fait le choix de m'appuyer sur l'assistance guidée d'un tuteur IA pour m'accompagner pas à pas. L'objectif était de comprendre la structure de Django, de maîtriser la logique orientée objet (POO) et de valider chaque étape sans me contenter d'un simple copier-coller. Je vais aussi rajouter le fait que j'ai suivie des Vidéo en ligne d'où le temps qui ma fallut pour terminer le devoir, fallait une vidéo idéale et j'en est pas trouvé beaucoup.
+
+---
+
+2. Étude et correctifs du code fourni
+Le code console initial a été entièrement analysé et restructuré pour respecter les standards de l'architecture MVC/MTV de Django :
+- Séparation des composants : Découpage propre entre `models.py`, `views.py`, `urls.py` et `tests.py`.
+- Héritage POO : Création d'une classe mère `Media` dont héritent `Livre`, `Dvd` et `Cd`. Les jeux de plateau ont été isolés dans leur propre classe `JeuDePlateau` conformément aux consignes métier.
+- Journalisation (Logs) : Mise en place d'un système de logs dans les vues pour suivre l'activité.
+
+---
+
+3. Mise en place des fonctionnalité
+
+A. Espace Membre (Public)
+Accessible à la racine du site (`/`), cet espace permet aux usagers de consulter la liste dynamique des médias disponibles en temps réel.
+
+B. Espace Bibliothécaire (Administration)
+Accessible via la route sécurisé `/admin`, l'interface d'administration Django permet aux bibliothécaires de :
+- Créer, afficher, mettre à jour et supprimer des membres emprunteurs.
+- Ajouter et gérer les médias du catalogue (Livres, DVD, CD, Jeux de plateau).
+- Gérer les emprunts et les retours.
+
+---
+
+4. Stratégie de tests
+Des tests automatisés ont été rédigés dans `gestion/tests.py` afin de valider la création d'objet et la logique métier (ouai j'ai galéré à rédigé ce texte de façons propre).
+
+Pour exécuter la suite de tests :
+```bash
+python manage.py test
+
+(Le Texte ma pris 3 jour à rédigé car j'ai fait des recherches, j'ai demandé à l'IA si je me trompait pas sur certains mot que j'avait sité comme MVC ou encore MTV, donc je comprend si vous voulez retirer quelques point à ce propos donc je tiens juste à vous remercier d'avoir lut ce texte :D)

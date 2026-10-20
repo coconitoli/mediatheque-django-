@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Médiathèque - Liste des Médias</title>
+</head>
+
+<body>
+    <h1>Catalogue de la Médiathèque</h1>
+    <ul>
+        {% for media in medias %}
+        <li>
+            <strong>{{ media.name }}</strong> -
+            {% if media.disponible %}
+            <span style="color: green;">Disponible</span>
+            {% else %}
+            <span style="color: red;">Emprunté par {{ media.emprunteur.name }}</span>
+            {% endif %}
+        </li>
+        {% empty %}
+        <li>Aucun média enregistré pour le moment.</li>
+        {% endfor %}
+    </ul>
+</body>
+
+</html>
